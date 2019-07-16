@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--1.select 定义下拉列表
+注意点：1.下拉列表不能输入内容，但是可以直接在列表中选择内容
+2.可以通过给option标签添加一个selected属性来指定列表默认值
+3.可以通过给option包裹一层optgroup来分组
+2.textarea 定义一个多行的输入框
+注意点：1.默认情况下有默认的长度和高度，可以通过cols 和 rows 来改变
+2.默认情况下可以无限换行
+3.默认情况下可以通过右下角来手动放大缩小,可以通过css中resize: none来控制
+-->
+<select>
+  <option>北京</option>
+  <option>上海</option>
+  <option selected="selected">武汉</option>
+</select>
+
+<select >
+  <optgroup label="北京">
+    <option>朝阳区</option>
+    <option>通州区</option>
+  </optgroup>
+  <optgroup label="广州">
+    <option>天河区</option>
+    <option>越秀区</option>
+  </optgroup>
+</select>
+
+<hr>
+<textarea cols="3" rows="5" style="resize: none">
+</textarea>
+</body>
+</html>

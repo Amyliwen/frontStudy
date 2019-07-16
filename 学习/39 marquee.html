@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <style>
+    marquee {
+      width: 200px;
+      height: 200px;
+      background-color: skyblue;
+    }
+  </style>
+</head>
+<body>
+<!--marquee标签不是w3c推荐的标签，但是浏览器支持非常好
+作用：跑马灯
+<marquee>
+</marquee>
+
+属性：direction方向
+scrollamount设置速度
+loop:滚动次数 默认是-1
+behavior设置滚动类型 slide滚动到边界就停止，alternate滚动到边界就弹回
+
+还可以设置图片滚动
+-->
+<marquee>随便写点</marquee>
+<marquee direction="right">随便写点</marquee>
+<marquee direction="up">随便写点</marquee>
+<marquee direction="down">随便写点</marquee>
+<hr>
+
+<marquee>随便写点</marquee>
+<marquee direction="right" scrollamount="1">随便写点</marquee>
+<marquee direction="up" scrollamount="10">随便写点</marquee>
+<marquee direction="down" loop="1">随便写点</marquee>
+<hr>
+
+<marquee behavior="slide">随便写点</marquee>
+<marquee behavior="alternate">随便写点</marquee>
+
+<hr>
+
+<marquee ><img src=""> </marquee>
+
+<hr>
+</body>
+</html>
