@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>54-清空默认边距</title>
+    <style>
+        html{color:#000;background:#FFF}body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,textarea,p,blockquote,th,td{margin:0;padding:0}table{border-collapse:collapse;border-spacing:0}fieldset,img{border:0}address,caption,cite,code,dfn,em,strong,th,var{font-style:normal;font-weight:normal}ol,ul{list-style:none}caption,th{text-align:left}h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal}q:before,q:after{content:''}abbr,acronym{border:0;font-variant:normal}sup{vertical-align:text-top}sub{vertical-align:text-bottom}input,textarea,select{font-family:inherit;font-size:inherit;font-weight:inherit;*font-size:100%}legend{color:#000}#yui3-css-stamp.cssreset{display:none}
+        /*
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        */
+        p{
+            width: 610px;
+            height: 110px;
+            background-color: #cdcdcd;
+            border: 1px solid #000;
+        }
+    </style>
+</head>
+<body>
+<!--
+1.为什么要清空默认边距？
+在企业开发中，为了更好的控制盒子的宽高和计算盒子的宽高等，编写代码之前先清空默认的边距
+2.如何清空
+*{
+            margin: 0;
+            padding: 0;
+        }
+3注意点
+通配符选择器会找到（遍历）当前界面中所有的标签，性能不好
+
+在企业开发中yui.css
+-->
+<p>CSS Sprites目的
+    将一个页面内所需要显示的图片全部整合到一张大图中，并使用css属性background-position进行调用
+    这样的话，当页面渲染时，可以减少请求次数，在一定程度上能够加快网页加载速度</p>
+</body>
+</html>
