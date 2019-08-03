@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>66-清除浮动方式二</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .box1{
+            background-color: red;
+            /*height: 50px;*/
+        }
+        .box2{
+            background-color: green;
+            clear: left;
+        }
+        .box1 p{
+            background: blue;
+            width: 100px;
+            float: left;
+        }
+        .box2 p{
+            background: yellow;
+            width: 100px;
+            float: left;
+        }
+    </style>
+</head>
+<body>
+<!--
+清除浮动的第二种方式
+给后面的盒子添加clear属性
+
+clear属性取值：
+none 默认取值，按照浮动元素的排序规则来排序（左浮动找左浮动，右浮动找右浮动）
+left 不要找前面的左浮动元素
+right 不要找前面的右浮动元素
+both 不要找前面的左浮动和右浮动元素
+
+注意点：
+当我们给某个元素添加clear属性之后，那么这个属性的margin就会失效
+-->
+<div class="box1">
+    <p>woshiwenzi</p>
+    <p>woshiwenzi</p>
+    <p>woshiwenzi</p>
+</div>
+<div class="box2">
+    <p>woshiwenzi</p>
+    <p>woshiwenzi</p>
+    <p>woshiwenzi</p>
+</div>
+</body>
+</html>

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>63-浮动练习</title>
+    <style>
+        html{color:#000;background:#FFF}body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,textarea,p,blockquote,th,td{margin:0;padding:0}table{border-collapse:collapse;border-spacing:0}fieldset,img{border:0}address,caption,cite,code,dfn,em,strong,th,var{font-style:normal;font-weight:normal}ol,ul{list-style:none}caption,th{text-align:left}h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal}q:before,q:after{content:''}abbr,acronym{border:0;font-variant:normal}sup{vertical-align:text-top}sub{vertical-align:text-bottom}input,textarea,select{font-family:inherit;font-size:inherit;font-weight:inherit;*font-size:100%}legend{color:#000}#yui3-css-stamp.cssreset{display:none}
+        .header{
+            width: 980px;
+            height: 100px;
+            /*background-color: red;*/
+            margin: 0 auto;
+        }
+        .header .logo{
+            width: 250px;
+            height: 100px;
+            background-color: pink;
+            float: left;
+        }
+        .header .language{
+            width: 150px;
+            height: 50px;
+            background-color: skyblue;
+            float: right;
+        }
+        .header .nav{
+            width: 650px;
+            height: 50px;
+            background-color: purple;
+            float: right;
+        }
+        .content{
+            width: 980px;
+            height: 400px;
+            /*background-color: green;*/
+            margin: 0 auto;
+            margin-top: 10px;
+        }
+        .content .aside{
+            width: 320px;
+            height: 400px;
+            background-color: yellow;
+            float: left;
+        }
+        .content .artical{
+            width: 650px;
+            height: 400px;
+            float: right;
+            /*background-color: pink;*/
+        }
+        .content .artical .articalTop{
+            width: 650px;
+            height: 350px;
+            /*background-color: blue;*/
+        }
+        .content .artical .articalBottom{
+            width: 650px;
+            height: 40px;
+            background-color: darkgoldenrod;
+            margin-top: 10px;
+        }
+        .content .artical .articalTop .articalTopLeft{
+            width: 400px;
+            height: 350px;
+            /*background-color: red;*/
+            float: left;
+        }
+        .content .artical .articalTop .articalTopLeft .new1{
+            width: 400px;
+            height: 200px;
+            background-color: salmon;
+        }
+        .content .artical .articalTop .articalTopLeft .new2{
+            width: 400px;
+            height: 140px;
+            background-color: tomato;
+            margin-top: 10px;
+        }
+        .content .artical .articalTop .articalTopRight{
+            width: 240px;
+            height: 350px;
+            background-color: green;
+            float: right;
+        }
+        .footer{
+            width: 980px;
+            height: 40px;
+            background-color: pink;
+            margin: 0 auto ;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+<!--
+
+-->
+
+<div class="header">
+    <div class="logo"></div>
+    <div class="language"></div>
+    <div class="nav"></div>
+</div>
+<div class="content">
+    <div class="aside"></div>
+    <div class="artical">
+        <div class="articalTop">
+            <div class="articalTopLeft">
+                <div class="new1"></div>
+                <div class="new2"></div>
+            </div>
+            <div class="articalTopRight"></div>
+        </div>
+        <div class="articalBottom"></div>
+    </div>
+</div>
+<div class="footer"></div>
+
+</body>
+</html>
