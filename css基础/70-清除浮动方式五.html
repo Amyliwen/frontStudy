@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>70-清除浮动方式五</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+       /* div{
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            overflow: hidden;
+        }
+        */
+        .box1{
+            background-color: red;
+            /*height: 50px;*/
+            overflow: hidden;
+            /*兼容IE6*/
+            *zoom:1;
+        }
+        .box2{
+            background-color: green;
+            /*margin-top: 10px;*/
+            /*clear: left;*/
+        }
+        .box1 p{
+            background: blue;
+            width: 100px;
+            float: left;
+        }
+        .box2 p{
+            background: yellow;
+            width: 100px;
+            float: left;
+        }
+    </style>
+</head>
+<body>
+<!--
+            overflow: hidden;
+作用1可以将超出标签的内容裁剪掉
+2.可以清除浮动
+
+两个嵌套的盒子想要设置margin-top，可以给外面盒子设置overflow: hidden;让里面的盒子设置margin-top，使其不被顶下来
+-->
+
+<!--<div>-->
+    <!--woshiwenzi-->
+    <!--woshiwenzi-->
+    <!--woshiwenzi-->
+    <!--woshiwenzi-->
+    <!--woshiwenzi-->
+    <!--woshiwenziwoshiwenziwoshiwenziwoshiwenziwoshiwenziwoshiwenziwoshiwenziwoshiwenzi-->
+<!--</div>-->
+
+<div class="box1">
+    <p>woshiwenzi</p>
+    <p>woshiwenzi</p>
+    <p>woshiwenzi</p>
+</div>
+<div class="box2">
+    <p>woshiwenzi</p>
+    <p>woshiwenzi</p>
+    <p>woshiwenzi</p>
+</div>
+</body>
+</html>

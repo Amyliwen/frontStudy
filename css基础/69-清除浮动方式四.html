@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>69-清除浮动方式四</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .box1{
+            background-color: red;
+            /*height: 50px;*/
+        }
+        .box2{
+            background-color: green;
+            /*margin-top: 10px;*/
+            /*clear: left;*/
+        }
+        .box1 p{
+            background: blue;
+            width: 100px;
+            float: left;
+        }
+        .box2 p{
+            background: yellow;
+            width: 100px;
+            float: left;
+        }
+        .box1::after{
+            content: "";
+            display: block;
+            height: 0;
+            visibility: hidden;
+            clear: both;
+        }
+        .box1{
+            /*兼容IE6*/
+            *zoom:1;
+        }
+    </style>
+</head>
+<body>
+<!--
+
+-->
+
+<div class="box1">
+    <p>woshiwenzi</p>
+    <p>woshiwenzi</p>
+    <p>woshiwenzi</p>
+</div>
+<div class="box2">
+    <p>woshiwenzi</p>
+    <p>woshiwenzi</p>
+    <p>woshiwenzi</p>
+</div>
+</body>
+</html>

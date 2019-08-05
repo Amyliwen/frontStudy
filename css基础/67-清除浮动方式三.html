@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .box1{
+            background-color: red;
+            /*height: 50px;*/
+        }
+        .box2{
+            background-color: green;
+            /*margin-top: 10px;*/
+            /*clear: left;*/
+        }
+        .box1 p{
+            background: blue;
+            width: 100px;
+            float: left;
+        }
+        .box2 p{
+            background: yellow;
+            width: 100px;
+            float: left;
+        }
+        .wall{
+            clear: both;
+        }
+        .h20{
+            height: 20px;
+            background-color: skyblue;
+        }
+    </style>
+</head>
+<body>
+
+<!--
+1.清除浮动的第三种方式
+隔墙法
+2.外墙法
+2.1在两个盒子中间添加一个额外的块级元素
+2.2给这个额外添加的块级元素设置clear：both属性
+
+注意点：
+外墙法可以让第二个盒子使用margin-top属性但第一个盒子的margin-bottom属性会失效，因此，最好使用
+
+3.内墙法
+3.1在第一个盒子中所有子元素最后添加一个额外的块级元素
+3.2给这个额外添加的块级元素设置clear：both属性
+
+注意点：
+内墙法可以让第二个盒子使用margin-top属性但第一个盒子的margin-bottom属性会失效，因此，最好使用
+
+不常用隔墙法来清除浮动，因为其违反了结构和样式分离的原则
+-->
+<div class="box1">
+    <p>woshiwenzi</p>
+    <p>woshiwenzi</p>
+    <p>woshiwenzi</p>
+    <div class="wall"></div>
+</div>
+<!--<div class="wall h20"></div>-->
+<div class="box2">
+    <p>woshiwenzi</p>
+    <p>woshiwenzi</p>
+    <p>woshiwenzi</p>
+</div>
+</body>
+</html>
