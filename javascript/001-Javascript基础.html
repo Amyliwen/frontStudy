@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>001-Javascript基础</title>
+    <script>
+        // const _max = Math.max.bind(Math);
+        // const _min = Math.min.bind(Math);
+        // const _pow = Math.pow.bind(Math);
+        // const _floor = Math.floor.bind(Math);
+        // const _round = Math.round.bind(Math);
+        // const _ceil = Math.ceil.bind(Math);
+        // // const log = console.log.bind(console);
+        // // const log = _ => {}
+        // // 计算 1+2+...+n
+        // const log = _ => {}
+        //
+        // function sumOneToN(n) {
+        //     let sum = 0;
+        //     for (let i = 1; i <= n; i++) {
+        //         sum += i;
+        //         log(`i=${i}: sum=${sum}`);
+        //     }
+        //     return sum;
+        // }
+
+        // sumOneToN(10);
+
+        function duplicate(numbers, duplication)
+        {
+            // write code here
+            //这里要特别注意~找到任意重复的一个值并赋值到duplication[0]
+            //函数返回True/False
+            for(let i = 0;i <= numbers.length; i++){
+                while(i !== numbers[i]){
+                    if(number[i] === number[numbers[i]]){
+                        duplication[0] = numbers[i];
+                        return true;
+                    }
+                    let temp = numbers[i];
+                    numbers[i] = numbers[temp];
+                    numbers[temp] = temp;
+                }
+            }
+            return false;
+        }
+
+    </script>
+</head>
+<body>
+<!--
+
+-->
+</body>
+</html>

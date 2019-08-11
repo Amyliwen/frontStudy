@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        document.getElementById("upload-btn").onclick = function () {
+            let input = document.getElementById("upload");
+            let file = input.files[0];
+            let formData = new FormData();
+            formData.append("file", file);
+            //FormData对象用以将数据编译成键值对，以便用XMLHttpRequest来发送数据。其主要用于发送表单数据，但亦可用于发送带键数据(keyed data)，而独立于表单使用。如果表单enctype属性设为multipart/form-data ，则会使用表单的submit()方法来发送数据，从而，发送数据具有同样形式。
+            fetch({
+                //Fetch提供了一个更好的替代方法，可以很容易地被其他技术使用，例如 Service Workers。Fetch还提供了单个逻辑位置来定义其他HTTP相关概念，例如CORS和HTTP的扩展。
+                url:'/upload',
+                method:'POST',
+                body:formData
+            })
+                .then((d)=>{
+                    console.log("result is ", d);
+                    alert("上传完毕");
+                })
+
+        }
+    </script>
+</head>
+<body>
+<!--https://www.cnblogs.com/lmxxlm-123/p/9297309.html-->
+<!--给出一个上传文件时不用刷新页面的方案，要求写出关键部分的js代码-->
+<form>
+    <input type="file" id="upload">
+    <button id="upload-btn">upload</button>
+</form>
+</body>
+</html>

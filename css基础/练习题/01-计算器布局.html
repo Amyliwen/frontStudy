@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0;
+        }
+        div{
+            width: 170px;
+            height: 170px;
+            background-color: white;
+        }
+        div a{
+            /*position: relative;*/
+            text-decoration: none;
+            display: inline-block;
+            width: 50px;
+            height: 50px;
+            line-height: 50px;
+            text-align: center;
+            border: 5px solid blue;
+            box-sizing: border-box;
+            float: left;
+        }
+        div a:hover{
+            border: 5px solid red;
+        }
+    </style>
+</head>
+<body>
+<!--
+ 使用HTML+CSS实现如图布局，border-width:5px，格子大小是50px*50px，hover时
+边框变成红色，需要考虑语义化。
+-->
+<div>
+    <a href="#">1</a>
+    <a href="#">2</a>
+    <a href="#">3</a>
+    <a href="#">4</a>
+    <a href="#">5</a>
+    <a href="#">6</a>
+    <a href="#">7</a>
+    <a href="#">8</a>
+    <a href="#">9</a>
+</div>
+</body>
+</html>
