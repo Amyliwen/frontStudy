@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS实现水平垂直居中</title>
+    <style>
+        .father{
+            width: 300px;
+            height: 300px;
+            border: 1px solid #000;
+            position: relative;
+            margin: 0 auto ;
+        }
+        .box{
+            position: absolute;
+            /*w*/
+            top: 50%;
+            left: 50%;
+            margin-left: -50px;
+            margin-top: -50px;
+        }
+        .size{
+            background: green;
+            width: 100px;
+            height: 100px;
+        }
+    </style>
+</head>
+<body>
+<!--
+实现方式：
+第一类：仅居中元素定宽高适用
+1.absolute + 负margin
+2.absolute + margin auto
+3.absolute + calc
+-->
+<div class="father">
+    <div class="box size">123456</div>
+</div>
+</body>
+</html>
