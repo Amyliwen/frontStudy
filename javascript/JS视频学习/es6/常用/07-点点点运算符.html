@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--
+
+-->
+<script>
+    // function foo(a, b) {
+    function foo(a,...value){//这里的a相当于占位符
+        console.log(arguments);
+        console.log(value);
+        // arguments.callee();//指向函数本身，递归调用
+        // arguments.forEach(function (item, index) {
+        //     console.log(item, index);
+        // })
+        //报错，这里的arguments是伪数组
+        value.forEach(function (item, index) {
+            console.log(item, index);
+        })
+    }
+    foo(2, 65 ,33, 44);
+
+    let arr = [1,6];
+    let arr1 = [2,3,4,5];
+    arr = [1, ...arr1, 6];
+    console.log(arr);
+</script>
+</body>
+</html>
