@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="x-ua-compatible" content="ie=edge" >
+    <title>05-v-model指令的学习</title>
+    <script src="./js/vue-2.4.0.js"></script>
+    <style>
+       html,body{
+           width: 100%;
+           height: 100%;
+           background: #fbf9fe;
+       }
+        #payPwd .pwd-wrap{
+            width: 90%;
+            height: 44px;
+            padding-bottom: 1px;
+            margin: 0 auto;
+            background: #fff;
+            border:1px solid #ddd;
+            display: flex;
+            display: -webkit-box;
+            display: -webkit-flex;
+            cursor: pointer;
+        }
+        .pwd-wrap li{
+            list-style-type:none;
+            text-align: center;
+            line-height: 44px;
+            -webkit-box-flex: 1;
+            flex: 1;
+            -webkit-flex: 1;
+            border-right:1px solid #ddd ;
+        }
+        .pwd-wrap li:last-child{
+            border-right: 0;
+        }
+        .pwd-wrap li i{
+            height: 10px;
+            width: 10px;
+            border-radius:50% ;
+            background: #000;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+<div id="app">
+    <div id="payPwd">
+        <div style="text-align: center;">
+            支付密码设置
+        </div>
+        <input ref="pwd" type="password" maxlength="6" v-model="msg" style="">
+        <ul>
+            <li v-if="msgLength > 0">  </li>
+            <li v-if="msgLength > 1">  </li>
+            <li v-if="msgLength > 2">  </li>
+            <li v-if="msgLength > 3">  </li>
+            <li v-if="msgLength > 4">  </li>
+            <li v-if="msgLength > 5">  </li>
+        </ul>
+        <!--
+        form:定义供用户输入的表单。               
+        fieldset:定义域。即输入区加有文字的边框。               
+        legend：定义域的标题，即边框上的文字。               
+        label：定义一个控制的标签。如输入框前的文字，用以关联用户的选择。               
+        input:定义输入域，常用。可设置type属性，从而具有不同功能。               
+        textarea:定义文本域(一个多行的输入控件)，默认可通过鼠标拖动调整大小。
+        button:定义一个按钮。               
+        select:定义一个选择列表，即下拉列表。               
+        option:定义下拉列表中的选项。
+        -->
+    </div>
+</div>
+<script>
+    var vm = new Vue({
+        el: '#app',
+        data() {
+            return{
+                msg: '',
+                msgLength: 0,
+            }
+        },
+        watch:{
+          msg (curVal){
+              if (/[^\d]/g.test(curVal)) {
+                  this.msg = this.msg.replace(/[^\d]/g,'');
+              }else{
+                  this.msgLength = curVal.length;
+              }
+              /*
+              ^ 用法一:   限定开头
+    文档上给出了解释是匹配输入的开始，如果多行标示被设置成了true，同时会匹配后面紧跟的字符。    比如 /^A/会匹配"An e"中的A，但是不会匹配"ab A"中的A
+用法二：（否）取反
+    当这个字符出现在一个字符集合模式的第一个字符时，他将会有不同的含义。
+    比如： /[^a-z\s]/会匹配"my 3 sisters"中的"3"  这里的”^”的意思是字符类的否定，上面的正则表达式的意思是匹配不是（a到z和空白字符）的字符。 */
+          }
+        },
+        methods: {
+            focus(){
+                this.$refs.pwd.focus();
+            }
+        }
+    })
+</script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:v-bind="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="x-ua-compatible" content="ie=edge" >
+    <title>05-v-model指令的学习</title>
+    <script src="./js/vue-2.4.0.js"></script>
+</head>
+<body>
+<div id="app">
+    <h4>{{msg}}</h4>
+    <!-- v-bind只能实现数据的单向绑定，从M自动绑定到V，无法实现数据的双向绑定-->
+    <input type="text" v-bind:value="msg">
+    <!--使用 v-model 指令，可以实现 表单元素和 Model 中数据的双向数据绑定-->
+    <!-- 注意 ：v-model 只能运用在表单元素中-->
+    <input type="text" style="width: 100%;" v-model="msg">
+
+    <!--form:定义供用户输入的表单。                -->
+    <!--fieldset:定义域。即输入区加有文字的边框。                -->
+    <!--legend：定义域的标题，即边框上的文字。                -->
+    <!--label：定义一个控制的标签。如输入框前的文字，用以关联用户的选择。                -->
+    <!--input:定义输入域，常用。可设置type属性，从而具有不同功能。                -->
+    <!--textarea:定义文本域(一个多行的输入控件)，默认可通过鼠标拖动调整大小。                -->
+    <!--button:定义一个按钮。                -->
+    <!--select:定义一个选择列表，即下拉列表。                -->
+    <!--option:定义下拉列表中的选项。-->
+</div>
+<script>
+    var vm = new Vue({
+        el: '#app',
+        data: {
+            msg: '我爱学习'
+        },
+        methods: {
+        }
+    })
+</script>
+</body>
+</html>

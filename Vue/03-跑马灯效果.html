@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--content属性值 :
+     width:可视区域的宽度，值可为数字或关键词device-width
+     height:同width
+     intial-scale:页面首次被显示是可视区域的缩放级别，取值1.0则页面按实际尺寸显示，无任何缩放
+     maximum-scale=1.0, minimum-scale=1.0;可视区域的缩放级别，
+     maximum-scale用户可将页面放大的程序，1.0将禁止用户放大到实际尺寸之上。
+     user-scalable:是否可对页面进行缩放，no 禁止缩放
+-->
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <!-- X-UA-Compatible是针对IE8新加的一个设置，对于IE8之外的浏览器是不识别的，这个区别与content="IE=7"在无论页面是否包含<!DOCTYPE>指令，都像是使用了 Windows Internet Explorer 7的标准模式。而content="IE=EmulateIE7"模式遵循<!DOCTYPE>指令。对于多数网站来说，它是首选的兼容性模式。-->
+    <title>Title</title>
+    <script src="./js/vue-2.4.0.js"></script>
+</head>
+<body>
+<div id="app">
+    <input type="button" value="浪起来" @click="lang">
+    <input type="button" value="低调" @click="stop">
+    <h4>{{msg}}</h4>
+</div>
+<script>
+    //注意：在VM实例中，如果想要获取data上的数据，或者想要调用methods中的方法，必须通过this.数据属性名 或this.方法名 来进行访问，这里的this，就表示我们new出来的VM实例对象
+    var vm = new Vue({
+        el: '#app',
+        data:{
+            msg: '猥琐发育，别浪~~',
+            intervalId: null //在data上定义定时器Id
+        },
+        methods: {
+            lang () {//这样的写法是es6的
+                // console.log(this.msg);
+                //substring() 方法用于提取字符串中介于两个指定下标之间的字符。若省略第二个参数stop，则返回的字串一直会带字符的结尾
+                //this的指向问题,可以使用var _this = this,保存一份，es6后用箭头函数绑定当前作用域的this,而function会在调用时动态绑定this
+                if (this.intervalId != null) return;
+                this.intervalId = setInterval(() => {
+                    //获取到头的第一个字符
+                    var start = this.msg.substring(0, 1);
+                    //获取到后面的所有字符
+                    var end = this.msg.substring(1);
+                    //重新拼接得到新的字符串，并赋值给this.msg
+                    this.msg = end + start;
+                },400);
+
+            //  注意：VM实例，会监听自己身上data中所有的数据改变，只要数据一发生变化，就自动把最新的数据，从data上同步到页面中去
+            },
+            stop(){//停止定时器
+                clearInterval(this.intervalId);
+                //每当清除了定时器之后，需要重新把intervalId设置为null
+                this.intervalId = null;
+            }
+        }
+    })
+/*1.给浪起来按钮绑定一个点击事件 @
+  2 在按钮的事件处理函数中，写相关业务逻辑代码：拿到msg字符串，然后调用字符串的substring
+    来进行字符串的截取操作，把第一个字符串截取出来，放到最后一个位置即可
+   3. 为了实现点击一下，自动截取字符串，需要将2代码定义在定时器当中
+    */
+
+</script>
+</body>
+</html>

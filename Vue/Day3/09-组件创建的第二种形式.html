@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Title</title>
+    <script src="../js/vue-2.4.0.js"></script>
+
+</head>
+<body>
+<div id="app">
+<mycom2></mycom2>
+</div>
+<script>
+
+    Vue.component('mycom2',{
+        template: '<div>\n' +
+            '    <h3>这里是直接使用Vue.component创建出来的组件</h3>\n' +
+            '    <span>1243</span>\n' +
+            '</div>'
+        })
+
+    //创建Vue实例，得到ViewModel
+    var vm = new Vue({
+        el: '#app',
+        data(){
+            return{
+
+            }
+        },
+        methods:{
+
+        }
+    })
+</script>
+</body>
+</html>
