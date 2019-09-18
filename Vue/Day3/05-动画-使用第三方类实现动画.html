@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>05动画</title>
+    <script src="../js/vue-2.4.0.js"></script>
+    <link rel="stylesheet" href="../css/animate.css">
+    <!--2.自定义两组样式，来控制 transition 内部的元素实现动画-->
+    <!--入场使用 bounceIn 离场 bounceOut -->
+    <style>
+    </style>
+</head>
+<body>
+<div id="app">
+    <input type="button" value="toggle" @click="flag=!flag">
+    <!--1 使用transition元素，把需要被动画控制的元素，包裹起来-->
+    <!--使用:duration="毫秒值" 来统一设置入场和离场时候的动画时长-->
+    <!--<transition enter-active-class="animatedfadeIn" leave-active-class="animated bounceOut" :duration="400">-->
+        <!--<h3 v-if="flag">这是一个H3</h3>-->
+    <!--</transition>-->
+    <!--使用 :duration="{enter:200, leave: 400}" 来分别设置入场的时长和离场的时长-->
+    <transition enter-active-class="animatedfadeIn" leave-active-class="animated bounceOut" :duration="{enter:200, leave: 400}">
+        <h3 v-if="flag">这是一个H3</h3>
+    </transition>
+</div>
+
+<script>
+    var vm = new Vue({
+        el: '#app',
+        data: {
+            flag: false,
+        }
+    })
+</script>
+</body>
+</html>
