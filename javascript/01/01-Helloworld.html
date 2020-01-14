@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>01-Helloworld</title>
+    <!--一旦script引入外部文件，就不能再编写代码了，浏览器会忽略其中的内容-->
+    <script src="">woshineirong</script>
+    <script>
+        /**
+         *
+         **/
+
+
+        // alert("01-Helloworld")
+        // document.write("来看下我");//向body中输出一个内容
+        // console.log("nihao"); //控制台输入内容
+    //    字面量是不可改变的值
+    //     变量可以保存字面量
+        null == undefined;
+        0.1 + 0.2 == 0.3;
+        typeof NaN;
+        typeof Function;
+        typeof Object;
+        typeof {}
+        'a'+1;
+        var person = {
+            age: 18,
+            getAge: function () {
+                return this.age;
+            }
+        }
+        var getAge = person.getAge();
+        console.log(person.getAge(),getAge());
+    </script>
+    <style>
+    </style>
+</head>
+<body>
+<!--可以将js代码编写到标签的onclick属性当中-->
+<button onclick="alert('你好');">点我一下</button>
+<a href="javascript:alert('让你点你就点');">你也点我一下</a>
+</body>
+</html>

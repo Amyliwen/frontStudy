@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .box, .box1 {
+            width: 200px;
+            height: 200px;
+            border: 1px solid #000;
+        }
+        .box2{
+            width: 20px;
+            height: 20px;
+            border:1px solid red;
+        }
+        .box3{
+            width: 50px;
+            height: 50px;
+            border:5px solid green;
+        }
+    </style>
+</head>
+<body>
+<!--<div class="box">-->
+    <!--hahahahahah-->
+    <!--<i>这是一个i标签</i>-->
+<!--</div>-->
+<!--<div class="box1">-->
+    <!--<div class="box2">-->
+    <!--</div>-->
+<!--</div>-->
+
+</body>
+<script>
+    /*这个方式仅仅是添加了一个元素 并没有添加到页面中 可以在控制台上找到  页面上并没有显示*/
+    var mydiv = document.createElement("div");
+    mydiv.className = "box3";
+    console.log(mydiv);
+    /*直接添加到页面上了 里面添加属性就直接显示出来 添加的元素的位置是最后一个元素的后面*/
+    document.write("<div class='box3'>这是用document.write添加的div</div>");
+    /*直接添加在页面上了 里面添加的属性就直接显示出来了 添加元素的位置是选择器里面的 并且清空父元素里的所有元素*/
+    document.getElementsByClassName("box")[0].innerHTML="<div class='box3'>这是用document.innerHTML创建的</div>";
+    /*没有添加标签时就仅仅是文本*/
+    document.getElementsByClassName("box")[0].innerHTML="我也不知道是啥";
+    /*在页面上显示出来的就是文本  添加了标签也是文本*/
+    document.querySelectorAll("div")[0].innerText="<i>我真的不知道是啥</i>";
+</script>
+</html>

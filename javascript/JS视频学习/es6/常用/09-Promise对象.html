@@ -37,6 +37,51 @@ rejected:失败状态
     },() => {//失败的回调
         console.log("失败");
     })
+
+    //定义获取新闻的功能函数
+    function getNews(url) {
+        let promise = new Promise((resolve, reject ) => {
+            //状态初始化
+            //执行异步任务
+            //创建xmlHttp实例对象
+            let xmlHttp = new XMLHttpRequest();
+            //绑定监听 readyState
+            //onreadystatechange 0 1 2 3 4 ，会调用4次
+            xmlHttp.onreadystatechange = function () {
+                if (xmlHttp.readyState === 4 && xmlHttp.status == 200){
+                    //请求成功
+                    console.log(xmlHttp.responseText);
+                    //修改状态
+                    resolve(xmlHttp.responseText); //修改promise的状态为成功状态
+                } else {
+                //请求失败
+                    reject('暂时没有新闻内容');
+                }
+                //open 设置请求的方式及URL
+                xmlHttp.open('GET',url);
+                //发送
+                xmlHttp.send();
+
+            }
+        })
+        return promise;
+    }
+
+    getNews('http://localhost:3000/news?id=203').then((data) => {
+        console.log(data);
+        //发送请求获取评论内容准备url
+        let commentsUrl = JSON.parse(data).commentsUrl;
+        let url = 'http://localhost:3000' + commentsUrl;
+        //发送请求
+        return getNews(url);
+    }, (error) => {
+        console.log(error);
+    })
+    .then((data) => {
+        console.log(data);
+    }, () =>{
+
+    })
 </script>
 </body>
 </html>

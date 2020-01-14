@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .A{
+            color: #000;
+        }
+        .B{
+            color: blue;
+        }
+        .ar{
+            border-top: 10px solid #000;
+            border-right: 10px solid transparent;
+            display: inline-block;
+        }
+    </style>
+    <script>
+        function fn(...args) {
+            console.log(typeof args);
+        }
+        // fn(21);
+        function sum(a,b) {
+            return a+b;
+        }
+        sum(1,"2");
+        let n = 0;
+        console.log(n++);
+    </script>
+</head>
+<body>
+<p class="B A">1</p>
+<p class="A B">1</p>
+<p>1<p>2</p></p>
+<span class="ar"></span>
+</body>
+</html>

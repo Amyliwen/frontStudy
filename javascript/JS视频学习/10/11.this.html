@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+    /*
+    解析器在调用函数每次都会向函数内部传递进一个隐含的参数，
+    这个隐含的参数就是this,this指向的是一个对象，
+    这个对象我们称为函数执行的上下文对象，根据函数的调用方式不同，this会指向不同的对象
+        1.以函数的形式调用，this会执行不同的对象
+        2.以方法的形式调用，this就是调用方法的那个对象
+    */
+        // function fun(a, b) {
+        //     console.log("a = "+a+", b ="+b);
+        //     console.log(this);
+        // fun();
+        //
+        // var obj = {
+        //     name:"孙悟空",
+        //     sayName: fun
+        // }
+        // obj.sayName();
+    // console.log(0==false);
+    // console.log(undefined==0);
+    // console.log(null==false);
+
+    console.log(+0===-0);
+    console.log(Object.is(NaN,NaN));
+    console.log(Object.is(+0,-0));
+
+// const a=[1,2,3]
+// a[5] = 6;
+// console.log(a.length);
+var a= 0;
+var b= {};
+var c= a+b;
+console.log(c.length);
+console.log("10"+3-"1");
+var x= "abc,world"
+console.log(x.split());
+// var {a,b,c} = {"c"}
+let str = 'Hello World xxx';
+console.log("1"+str.substring(6,11))
+console.log("2"+str.substr(6,11))
+console.log("1"+str.split(6,11))
+console.log("3"+str.slice(6,11))
+    </script>
+</head>
+<body>
+
+</body>
+</html>

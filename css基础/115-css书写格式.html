@@ -3,11 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <title>115-css书写格式</title>
-    <!--<style>-->
-        <!--div{-->
-            <!--color: blue;-->
-        <!--}-->
-    <!--</style>-->
+    <style>
+        /*div{*/
+            /*color: blue;*/
+        /*}*/
+        .a{
+            width: 100px;
+            height: 100px;
+            margin-top: 10px;
+            margin-bottom: -20px;
+            background-color: red;
+        }
+        .b{
+            background-color: green;
+            width: 100px;
+            height: 100px;
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+    </style>
 
     <!--<link rel="stylesheet" href="115-css书写格式.css">-->
     <style>
@@ -32,6 +46,7 @@
 导入样式在显示界面时，会先加载结构，再加载样式，所以用户看到界面的时候不一定已经设置了样式
 -->
 <!--<div style="color: red;">我是div</div>-->
-<div>我是div</div>
+<div class="a">我是div</div>
+<div class="b">我是div</div>
 </body>
 </html>

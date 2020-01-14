@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>01-基本语法.html</title>
+</head>
+<body>
+<!--
+
+-->
+<script>
+    /***
+     * 1.js中严格区分大小写
+     * 2.js中每一条语句以分号结尾
+     *  如果不写分号，浏览器会自动添加（怎么自动添加），但是会消耗一些系统资源，而且有些时候浏览器会加错分号，因此，在开发中分号必须写
+     *  3.js中会忽略多个空格和换行，可以利用空格和换行对代码进行格式化
+     *
+     * 浏览器怎么自动添加分号 Automatic semicolon insertion in JavaScript
+     * https://www.oschina.net/question/253614_107708
+     */
+     //Uncaught TypeError: c is not a function
+     /*
+     a = b + c(d + e).print();
+      */
+     var a, b , c, d, e;
+    a = b + c
+    (d + e).print()
+</script>
+</body>
+</html>

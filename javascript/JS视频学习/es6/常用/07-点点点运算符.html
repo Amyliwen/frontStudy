@@ -3,12 +3,52 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <style>
+        p{
+            color: black !important;
+        }
+        p span{
+            color:yellow;
+            }
+        #s1{
+            color: orangered;
+        }
+        p .c1{
+            color: blue;
+            position: absolute;
+        }
+    </style>
 </head>
 <body>
+<p><span id="s1" class="c1">wen</span></p>
 <!--
+对象中的扩展运算符(...)用于取出参数对象中的所有可遍历属性，拷贝到当前对象之中
 
+let bar = { a: 1, b: 2 };
+let baz = { ...bar }; // { a: 1, b: 2 }
+等价于
+let bar = { a: 1, b: 2 };
+let baz = Object.assign({}, bar); // { a: 1, b: 2 }
+
+Object.assign方法用于对象的合并，将源对象（source）的所有可枚举属性，复制到目标对象（target）。
+Object.assign方法的第一个参数是目标对象，后面的参数都是源对象。(如果目标对象与源对象有同名属性，或多个源对象有同名属性，则后面的属性会覆盖前面的属性)。
 -->
 <script>
+let a= b = c ={name: 'dog'};
+b.name = 'cat';a={name: 'fish'}; console.log(b.name, c.name);
+var s1 = new String("fe");
+var s2 = new String("fe");
+console.log(s1 == s2);
+console.log(s1 === s2);
+var foo =1;
+function main() {
+    console.log(foo);
+    var foo =2;
+    console.log(this.foo);
+    this.foo =3;
+}
+main();
+new main();
     // function foo(a, b) {
     function foo(a,...value){//这里的a相当于占位符
         console.log(arguments);
