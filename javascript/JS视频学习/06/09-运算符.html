@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>09-运算符</title>
+</head>
+<body>
+<script>
+    /*
+    *运算符-操作符
+    * 算数运算符：
+    *   当对非Number类型的值进行运算时，会将这些值转换为Number
+    *       任何值和NaN做运算都得到NaN
+    *   + 隐式转换 +""转换为字符串，实际上是调用String
+    *       两个字符串会做拼串，并返回；
+    *       任何的值和字符串做加法运算，都会先转换为字符串，然后在和字符串做拼串的操作
+    *   -
+    *  任何值做 -  * 和 /运算都会自动转换为Number，可以-0 *1 /1转为Number
+    *  %取余
+    *
+     */
+
+     var result = 1+ 2+ "3";//33
+</script>
+</body>
+</html>

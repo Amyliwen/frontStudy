@@ -9,6 +9,26 @@
     /*
     类型转换为Number
      */
+    /*
+    将其他的数据类型转换为Number
+    方式一：
+       调用Number（）函数，并将被转换的数据作为参数传递给函数
+        字符串-》数字
+            1.如果是纯数字的字符串，则直接将其转换为数字
+            2.如果字符串中有非数字的内容，则转换为NaN
+            3.如果字符串中是一个空串或者全是空格的字符，则转换为0
+        布尔-》数字
+        Null->数字0
+        undefined->数字NaN
+    方式二：
+        这种方法专门针对字符串
+        parseInt() 字符串转整数
+        parseFloat() 字符串转小数
+    */
+    var a = "";
+    a = Number(a);
+    console.log(typeof a);
+    console.log(a);
 </script>
 </body>
 </html>
